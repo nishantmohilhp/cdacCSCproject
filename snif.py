@@ -42,5 +42,4 @@ while numPack < 100:
     print('IPv4 packet:')
     print('\tVersion: {}, Header length: {}, TTL: {}'.format(version,header_len,ttl))
     print('\tProtocol: {}, Source: {}, Target: {}'.format(proto,src,target))
-    print(" lolo ")
     numPack +=1 
