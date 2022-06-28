@@ -15,8 +15,10 @@ def get_mac_address(bytesString):
 print("Enter the number of Packet you want to sniff ")
 numPackr = int(input())
 numPack = 0
+intusPac = 0
 print("Do you want to sniff out any target ip address (Type yes for yes , press ***Enter *** for No")
 sf = input()
+tip = "no"
 if sf == "yes" or sf == "YES":
   print("******** Enter the ip address **************")
   tip = input()
@@ -54,3 +56,5 @@ while numPack < numPackr:
     numPack +=1
     if target == tip:
       print("\033[91m thear is a packet from your target ip \033[00m")
+      intusPac +=1
+print("Number of packet send to Ip {}".format(intusPac))
