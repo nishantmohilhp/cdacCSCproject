@@ -12,7 +12,6 @@ def get_mac_address(bytesString):
   bytesString = map('{:02x}'.format, bytesString)
   destination_mac = ':'.join(bytesString).upper()
   return destination_mac
-
 # while loop runs infinitely to capture any incoming packets
 numPack = 0
 while numPack < 100:
@@ -42,8 +41,6 @@ while numPack < 100:
     
     print('IPv4 packet:')
     print('\tVersion: {}, Header length: {}, TTL: {}'.format(version,header_len,ttl))
-    if target == "172.26.8.234":
-      print('\tProtocol: {}, Source: {}, Target: {}'.format(proto,src,target))
-    else: 
-      print(" lolo ")
+    print('\tProtocol: {}, Source: {}, Target: {}'.format(proto,src,target))
+    print(" lolo ")
     numPack +=1 
