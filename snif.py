@@ -11,17 +11,17 @@ def get_mac_address(bytesString):
   bytesString = map('{:02x}'.format, bytesString)
   destination_mac = ':'.join(bytesString).upper()
   return destination_mac
-# while loop runs infinitely to capture any incoming packets
-print("Enter the number of Packet you want to snif ")
+# while loop runs  to capture any incoming packets
+print("Enter the number of Packet you want to sniff ")
 numPackr = int(input())
 numPack = 0
-print("do you want to snif out any target ip address ")
+print("Do you want to sniff out any target ip address (yes/no)")
 sf = input()
 if sf == "yes" or sf == "YES":
-  print("enter the ip address")
+  print("******** Enter the ip address **************")
   tip = input()
 else:
-  print("lets go ")
+  print("*************** OK ************")
 
 while numPack < numPackr:
 
@@ -35,7 +35,7 @@ while numPack < numPackr:
   ethernet_proto = socket.htons(ethernet_proto)
   data = raw_data[14:]
 # if (destination_mac == )
-  print('\nEthernet frame:')
+  print('\n***********  Ethernet frame:   ****************')
   print('\tDestination: {}, Source: {}, Ethernet Protocol: {}'.format(destination_mac, src_mac, ethernet_proto))
 
    # analyse only IPv4 packets (I know IPv6 is the real deal but this should work for now)
@@ -48,7 +48,7 @@ while numPack < numPackr:
     src = '.'.join(map(str,src)) 
     target = '.'.join(map(str,target)) 
     
-    print('IPv4 packet:')
+    print('_______IPv4 packet:__________')
     print('\tVersion: {}, Header length: {}, TTL: {}'.format(version,header_len,ttl))
     print('\tProtocol: {}, Source: {}, Target: {}'.format(proto,src,target))
     numPack +=1
