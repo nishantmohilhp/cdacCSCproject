@@ -15,7 +15,7 @@ def get_mac_address(bytesString):
 print("Enter the number of Packet you want to sniff ")
 numPackr = int(input())
 numPack = 0
-print("Do you want to sniff out any target ip address (yes/no)")
+print("Do you want to sniff out any target ip address (Type yes for yes , press ***Enter *** for No")
 sf = input()
 if sf == "yes" or sf == "YES":
   print("******** Enter the ip address **************")
