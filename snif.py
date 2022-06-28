@@ -1,4 +1,3 @@
-
 import socket,sys,struct
 
 # create a network socket using the default constructor
@@ -13,8 +12,18 @@ def get_mac_address(bytesString):
   destination_mac = ':'.join(bytesString).upper()
   return destination_mac
 # while loop runs infinitely to capture any incoming packets
+print("Enter the number of Packet you want to snif ")
+numPackr = int(input())
 numPack = 0
-while numPack < 100:
+print("do you want to snif out any target ip address ")
+sf = input()
+if sf == "yes" or sf == "YES":
+  print("enter the ip address")
+  tip = input()
+else:
+  print("lets go ")
+
+while numPack < numPackr:
 
   # listen on port 65565
   raw_data, address = sock.recvfrom(65565)
@@ -42,4 +51,6 @@ while numPack < 100:
     print('IPv4 packet:')
     print('\tVersion: {}, Header length: {}, TTL: {}'.format(version,header_len,ttl))
     print('\tProtocol: {}, Source: {}, Target: {}'.format(proto,src,target))
-    numPack +=1 
+    numPack +=1
+    if target == tip:
+      print("\033[91m thear is a packet from your target ip \033[00m")
