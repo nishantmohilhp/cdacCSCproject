@@ -57,4 +57,6 @@ while numPack < numPackr:
     if target == tip:
       print("\033[91m thear is a packet from your target ip \033[00m")
       intusPac +=1
-print("Number of packet send to Ip [ {} ] ".format(intusPac))
+print ('\033[91m ***************************************************** \033[00m')
+print(" *** Number of packet send to Ip [ {} ]".format(intusPac))
+print("\033[91m ********************************************************* \033[00m")
