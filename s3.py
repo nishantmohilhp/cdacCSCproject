@@ -1,6 +1,7 @@
 #! /usr/local/bin/python3.5
 
 import socket
+from statistics import fmean
 import struct
 import textwrap
 import binascii
@@ -17,7 +18,7 @@ DATA_TAB_2 = '\t\t   '
 DATA_TAB_3 = '\t\t\t   '
 DATA_TAB_4 = '\t\t\t\t   '
 
-headPrint = '''
+headPrint = '''\033[1;32m
               _                            _        
 __      _____| | ___ ___  _ __ ___   ___  | |_ ___  
 \ \ /\ / / _ \ |/ __/ _ \| '_ ` _ \ / _ \ | __/ _ \ 
@@ -25,23 +26,26 @@ __      _____| | ___ ___  _ __ ___   ___  | |_ ___
   \_/\_/ \___|_|\___\___/|_| |_| |_|\___|  \__\___/ 
                                                     
             _                      _                       _        _   
- _ __   ___| |___      _____  _ __| | __  _ __   __ _  ___| | _____| |_ 
-| '_ \ / _ \ __\ \ /\ / / _ \| '__| |/ / | '_ \ / _` |/ __| |/ / _ \ __|
-| | | |  __/ |_ \ V  V / (_) | |  |   <  | |_) | (_| | (__|   <  __/ |_ 
-|_| |_|\___|\__| \_/\_/ \___/|_|  |_|\_\ | .__/ \__,_|\___|_|\_\___|\__|
+ _   _      _                      _                       _        _   
+| \ | | ___| |___      _____  _ __| | __  _ __   __ _  ___| | _____| |_ 
+|  \| |/ _ \ __\ \ /\ / / _ \| '__| |/ / | '_ \ / _` |/ __| |/ / _ \ __|
+| |\  |  __/ |_ \ V  V / (_) | |  |   <  | |_) | (_| | (__|   <  __/ |_ 
+|_| \_|\___|\__| \_/\_/ \___/|_|  |_|\_\ | .__/ \__,_|\___|_|\_\___|\__|
                                          |_|                            
-    _                _                     
-   / \   _ __   __ _| |_   _ ___  ___ _ __ 
-  / _ \ | '_ \ / _` | | | | / __|/ _ \ '__|
- / ___ \| | | | (_| | | |_| \__ \  __/ |   
-/_/   \_\_| |_|\__,_|_|\__, |___/\___|_|   
-                       |___/               
--A Pathways program developed at CDAC by Nishant Mohil
+           _  __  __           
+ ___ _ __ (_)/ _|/ _| ___ _ __ 
+/ __| '_ \| | |_| |_ / _ \ '__|
+\__ \ | | | |  _|  _|  __/ |   
+|___/_| |_|_|_| |_|  \___|_|   
+                                             
+               \033[0;0m   
+
+ -A Python program developed at CDAC by Nishant Mohil 
 
 '''
 print(headPrint)
-print('Please enter the number With reference to its action.')
-print('1 >> Network packet collection ')
+print('\033[1;32m Please enter the number With reference to its action. \n  \033[0;0m')
+print('1 >> Network packet collection (All packet without Filter )')
 starInput = int(input())
 
 def main():
@@ -50,11 +54,11 @@ def main():
     filters = (["ICMP", 1, "ICMPv6"],["UDP", 17, "UDP"], ["TCP", 6, "TCP"])
     filter = []
 
-    if len(sys.argv) == 2:
-        print("This is the filter: ", sys.argv[1])
-        for f in filters:
-            if sys .argv[1] == f[0]:
-                filter = f
+#    if len(sys.argv) == 2:
+#        print("This is the filter: ", sys.argv[1])
+#        for f in filters:
+#            if sys .argv[1] == f[0]:
+#               filter = f
 
 
 
